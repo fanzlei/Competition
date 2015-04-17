@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eee" >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#100"
+        android:id="@+id/login_bar"
+        android:text="学生注册"
+        android:gravity="center"
+        style="@style/text_big"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+        <TextView
+            style="@style/text_normal"
+            android:text="用户名："
+            android:paddingLeft="20dp"
+            android:paddingRight="1dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_name"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+        <TextView
+            style="@style/text_normal"
+            android:text="    密码："
+            android:paddingLeft="20dp"
+            android:paddingRight="1dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:password="true"
+            android:id="@+id/register_pass"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+        <TextView
+            style="@style/text_normal"
+            android:text="    手机："
+            android:inputType="number"
+            android:paddingLeft="20dp"
+            android:paddingRight="1dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_phone"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+        <TextView
+            style="@style/text_normal"
+            android:text="    班级："
+            android:paddingLeft="20dp"
+            android:paddingRight="1dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_classes"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:background="@drawable/login_button"
+        android:onClick="register"/>
+</LinearLayout>

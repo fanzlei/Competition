@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="login_button">#d43e8d2b</color>
+    <color name="login_button_pressed">#d4398c8d</color>
+
+    <color name="menu_item">#d4398c8d</color>
+    <color name="menu_item_pressed">#98344e25</color>
+
+    <color name="top_bar">#d43e8d2b</color>
+    <color name="top_bar_menu">#d42c5e8d</color>
+    <color name="menu_bg">#9a47537e</color>
+    <color name="menu_bg_alpha">#1333</color>
+</resources>
