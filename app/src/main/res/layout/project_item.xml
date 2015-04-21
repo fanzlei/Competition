@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#316ca9ba"
+    android:layout_marginTop="5dp"
     android:orientation="vertical">
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/project_item_title"
+    android:text="项目标题"
+    android:textSize="28sp"
+    android:gravity="center_horizontal"
     android:layout_gravity="center_horizontal"/>
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:text="简介"
+    android:textSize="25sp"
+    android:layout_margin="18dp"
     android:id="@+id/project_item_profile"/>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
     android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="开始：2015-02-02"
+        android:textSize="18sp"
         android:id="@+id/project_item_start"/>
     <TextView
+        android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="结束：2015-03-02"
+        android:textSize="18sp"
         android:id="@+id/project_item_end"/>
     </LinearLayout>
 </LinearLayout>

@@ -1,15 +1,15 @@
 package com.fanz.competition.network;
 
 import android.os.Handler;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.fanz.competition.RuntimeData;
+import com.fanz.competition.activity.admin.ProjectManager;
+import com.fanz.competition.model.Apply;
 import com.fanz.competition.model.Project;
 import com.fanz.competition.model.Reward;
 import com.fanz.competition.utils.Constants;
 import com.fanz.competition.utils.Tag;
-import com.fanz.competition.widget.fragment.MyGradeFragment;
 import com.fanz.competition.widget.fragment.ProjectFragment;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -20,7 +20,6 @@ import com.lidroid.xutils.http.client.HttpRequest;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.Date;
-import java.text.DateFormat;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -116,4 +115,50 @@ public class GetData {
 
     }
 
+
+    public static void getDataForProject(final Handler handler,String projectName){
+        GetData.handler = handler;
+        RuntimeData.projectRewards = new ArrayList<>();
+        RuntimeData.projectApplys = new ArrayList<>();
+        RequestParams params = new RequestParams();
+        params.addQueryStringParameter("name",projectName);
+        params.addQueryStringParameter("tag",Tag.GET_STUDENTS_AND_REWARDS_BY_PROJECT);
+        HttpUtils http = new HttpUtils(5000);
+        http.send(HttpRequest.HttpMethod.POST,Constants.REQUEST_ENTRY,params,new RequestCallBack<String>() {
+            @Override
+            public void onSuccess(ResponseInfo<String> objectResponseInfo) {
+                if(objectResponseInfo.result.isEmpty()){Log.d("getDataForProject size:","0");return;}
+                try {
+                    String result = new String(objectResponseInfo.result.getBytes(),"utf-8");
+                    Log.d("fanz",result);
+                    JSONArray ja = new JSONArray(result);
+                    JSONArray rewardArray = ja.getJSONArray(0);
+                    JSONArray applyArray = ja.getJSONArray(1);
+                    for(int i = 0;i<rewardArray.length();i++){
+                        JSONObject jo = rewardArray.getJSONObject(i);
+                        Reward reward = new Reward(
+                                -1,jo.getString("project_name"),jo.getString("student_name"),jo.getString("rank"),jo.getInt("type")
+                        );
+                        RuntimeData.projectRewards.add(reward);
+                    }
+                    for(int i=0;i<applyArray.length();i++){
+                        JSONObject jo = applyArray.getJSONObject(i);
+                        Apply apply = new Apply(-1,jo.getString("student_name"),jo.getString("project_name"),Date.valueOf(jo.getString("apply_time")));
+                        RuntimeData.projectApplys.add(apply);
+                    }
+                    handler.sendEmptyMessage(ProjectManager.msgWhat);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(HttpException e, String s) {
+            }
+        });
+    }
 }

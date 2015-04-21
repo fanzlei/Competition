@@ -20,10 +20,13 @@
             android:name=".activity.Register"
             android:label="@string/title_activity_register" >
         </activity>
-        <activity android:name=".activity.Main" android:launchMode="singleTask"/>
+        <activity android:name=".activity.student.Main" android:launchMode="singleTask"/>
 
-        <activity android:name=".activity.ProjectDetail"/>
-        <activity android:name=".activity.AdminMain"/>
+        <activity android:name=".activity.student.ProjectDetail"/>
+        <activity android:name=".activity.admin.AdminMain" android:launchMode="singleTask"/>
+        <activity android:name=".activity.admin.ProjectManager"/>
+        <activity android:name=".activity.admin.ProjectReward"/>
+        <activity android:name=".activity.admin.AddProject"/>
     </application>
 
 </manifest>

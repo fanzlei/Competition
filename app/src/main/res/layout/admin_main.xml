@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="#d43e8d2b"
+        android:layout_alignParentTop="true"
+        android:id="@+id/admin_top">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="项目管理"
+            android:textSize="28sp"/>
+        </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_project"
+        android:text="添加项目"
+        android:textSize="28sp"
+        android:onClick="addProject"
+        android:layout_alignParentBottom="true"/>
+    <ListView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/admin_top"
+    android:layout_above="@id/add_project"
+    android:id="@+id/project_list_admin"/>
 
-</LinearLayout>
+
+</RelativeLayout>

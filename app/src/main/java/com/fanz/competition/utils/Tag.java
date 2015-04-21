@@ -10,7 +10,8 @@ public class Tag {
     public static final String REGISTER_STUDENT = "REGISTER_STUDENT";
     public static final String GET_MY_REWARDS = "GETMYREWARDS";
     public static final String GET_PROJECTS = "GETPROJECTS";
-    public static final String GET_STUDENTS_BY_PROJECT = "GET_STUDENTS_BY_PROJECT";
+    public static final String GET_STUDENTS_AND_REWARDS_BY_PROJECT = "GET_STUDENTS_AND_REWARDS_BY_PROJECT";
     public static final String JOIN_PROJECT = "JOIN_PROJECT";
+    public static final String ADD_PROJECT = "ADD_PROJECT";
 
 }

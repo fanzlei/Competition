@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.fanz.competition.R;
 import com.fanz.competition.RuntimeData;
-import com.fanz.competition.activity.ProjectDetail;
+import com.fanz.competition.activity.student.ProjectDetail;
 import com.fanz.competition.model.Project;
 import com.fanz.competition.network.GetData;
 import com.yalantis.phoenix.PullToRefreshView;
@@ -25,13 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import java.util.logging.LogRecord;
-
-import cn.bingoogolapple.bgaannotation.BGAALayout;
-import in.srain.cube.mints.base.TitleBaseFragment;
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
-import in.srain.cube.views.ptr.PtrFrameLayout;
-import in.srain.cube.views.ptr.PtrHandler;
 
 /**
  * Created by Fanz on 3/16/15.
@@ -104,8 +98,8 @@ public class ProjectFragment extends Fragment {
             HashMap<String,Object> map = new HashMap<>();
             map.put("name",project.getName());
             map.put("sponsor",project.getSponsor());
-            map.put("start_data",project.getStart_date().toString());
-            map.put("end_data",project.getEnd_date().toString());
+            map.put("start_data","开始："+project.getStart_date().toString());
+            map.put("end_data","结束："+project.getEnd_date().toString());
             map.put("project_type",String.valueOf(project.getProject_type()));
             map.put("profile",project.getProfile());
             list.add(map);

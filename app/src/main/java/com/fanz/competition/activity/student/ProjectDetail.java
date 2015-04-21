@@ -1,4 +1,4 @@
-package com.fanz.competition.activity;
+package com.fanz.competition.activity.student;
 
 import android.app.Activity;
 import android.content.Intent;

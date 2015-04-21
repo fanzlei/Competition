@@ -1,6 +1,7 @@
 package com.fanz.competition;
 
 import com.fanz.competition.model.Administor;
+import com.fanz.competition.model.Apply;
 import com.fanz.competition.model.Project;
 import com.fanz.competition.model.Reward;
 import com.fanz.competition.model.Student;
@@ -16,6 +17,8 @@ public class RuntimeData {
 
     public static List<Project> projects = new ArrayList<>();
     public static List<Reward> myRewards = new ArrayList<>();
+    public static List<Reward> projectRewards = new ArrayList<>();
+    public static List<Apply> projectApplys = new ArrayList<>();
     public static Student myAccount_student = new Student();
     public static Administor myAccount_admin = new Administor();
     public static boolean isLoginStudent = true;
